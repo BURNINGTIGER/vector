@@ -1,5 +1,5 @@
 #include "vector.hpp"
-vector_t::vector_t()
+vector_t::vector_t() noexcept
 {
 	ptr_ = new int[0];
 }
@@ -28,7 +28,7 @@ vector_t::~vector_t() noexcept
 	delete[] ptr_;
 }
 
-unsigned int vector_t:: size() const 
+unsigned int vector_t:: size() const noexcept
 {
 	return (size_);
 }
@@ -42,7 +42,7 @@ vector_t& vector_t:: operator=(const vector_t& other)
 		ptr_[i] = other.ptr_[i];
 }
 
-unsigned int vector_t::capacity() const
+unsigned int vector_t::capacity() const noexcept
 {
 	return (capacity_);
 }
